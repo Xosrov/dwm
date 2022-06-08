@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	{ "Pavucontrol", 			NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "simplescreenrecorder", 	NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "st-256color",      		NULL,     NULL,           0,         1,          1,           0,        -1 },
-	{ "Thunar",      			NULL,     NULL,           0,         1,          0,           1,        -1 },
+	{ "Thunar",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
