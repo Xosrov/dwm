@@ -9,7 +9,3 @@ Modify the two `X11` library lines in `config.mk` and uncomment the default valu
 
 * **FriBiDi** library for rtl support
 * **libxcb**, **Xlib-libxcb** and **xcb-res** packages (platform dependant) for swallow
-
-## Base README
-
-Found [here](https://git.suckless.org/dwm/file/README.html)
