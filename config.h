@@ -36,10 +36,10 @@ static const Rule rules[] = {
 	 */
 	/* class     				instance  title           tags mask  isfloating  isterminal   noswallow  monitor */
 	{ "kdeconnect-app", 		NULL,     NULL,           0,    	 1,          0,           0,        -1 },
-	{ "Pavucontrol", 			NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "simplescreenrecorder", 	NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "st-256color",      		NULL,     NULL,           0,         1,          1,           0,        -1 },
-	{ "Thunar",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "copyq",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
