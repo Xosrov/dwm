@@ -38,8 +38,8 @@ static const Rule rules[] = {
 	{ "kdeconnect-app", 		NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "simplescreenrecorder", 	NULL,     NULL,           0,    	 1,          0,           0,        -1 },
 	{ "st-256color",      		NULL,     NULL,           0,         1,          1,           0,        -1 },
-	{ "nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "copyq",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "CopyQ",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -72,9 +72,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 //sound controls
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "amixer", " set", "Master", "5%+",     NULL };
+static const char *downvol[]   = { "amixer", " set", "Master", "5%-",     NULL };
+static const char *mutevol[]   = { "amixer", " set", "Master", "0%",     NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
