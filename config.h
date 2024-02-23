@@ -13,7 +13,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const double activeopacity   = 0.98f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
+static const double activeopacity   = 0.95f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity = 0.85f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
 static const char dmenufont[]       = "monospace:size=11";
