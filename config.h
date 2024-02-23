@@ -13,6 +13,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
+static const double activeopacity   = 0.98f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
+static const double inactiveopacity = 0.85f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12" };
 static const char dmenufont[]       = "monospace:size=11";
 static const char col_gray1[]       = "#222222";  	// darkest gray
@@ -34,14 +36,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     				instance  title           tags mask  isfloating  isterminal   noswallow  monitor */
-	{ "kdeconnect-app", 		NULL,     NULL,           0,    	 1,          0,           0,        -1 },
-	{ "simplescreenrecorder", 	NULL,     NULL,           0,    	 1,          0,           0,        -1 },
-	{ "st-256color",      		NULL,     NULL,           0,         1,          1,           0,        -1 },
-	{ "Nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "copyq",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Pavucontrol",      			NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor focusopacity unfocusopacity*/
+	{ "kdeconnect-app", 		NULL,     NULL,           0,    	 1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "simplescreenrecorder", 	NULL,     NULL,           0,    	 1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "st-256color",      		NULL,     NULL,           0,         1,          1,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "Nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "copyq",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "Pavucontrol",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1,      activeopacity,   inactiveopacity }, /* xev */
 };
 
 /* layout(s) */
@@ -102,6 +104,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_a,      changefocusopacity,   {.f = +0.025}},
+	{ MODKEY|ShiftMask,             XK_s,      changefocusopacity,   {.f = -0.025}},
+	{ MODKEY|ShiftMask,             XK_z,      changeunfocusopacity, {.f = +0.025}},
+	{ MODKEY|ShiftMask,             XK_x,      changeunfocusopacity, {.f = -0.025}},
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
