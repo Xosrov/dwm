@@ -78,6 +78,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *upvol[]   = { "amixer", "set", "Master", "5%+",     NULL };
 static const char *downvol[]   = { "amixer", "set", "Master", "5%-",     NULL };
 static const char *mutevol[]   = { "amixer", "set", "Master", "0%",     NULL };
+//first make sure /sys/class/backlight/{intel_backlight or whatever}/brightness is in group 'video' and so in your user, and has g+w access
+static const char *downbright[]   = { "light", "-U", "5",     NULL };
+static const char *upbright[]   = { "light", "-A", "5",     NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -114,6 +117,8 @@ static const Key keys[] = {
 	{ 0,                       		XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       		XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       		XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ 0, 							XF86XK_MonBrightnessUp, spawn, {.v = upbright } },
+	{ 0, 							XF86XK_MonBrightnessDown, spawn, {.v = downbright } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
