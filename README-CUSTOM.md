@@ -13,6 +13,11 @@ Modify the two `X11` library lines in `config.mk` and uncomment the default valu
 For ubuntu, I put these into .xprofile:
 ```
 if [ "$DESKTOP_SESSION" = "dwm" ]; then
+        TOUCHPAD_ID=$(xinput list | grep Touchpad | rev | awk '{print $4}' | rev | cut -d'=' -f2)
+	xinput --set-prop $TOUCHPAD_ID 'libinput Tapping Enabled' 1
+	xinput --set-prop $TOUCHPAD_ID 'libinput Tapping Drag Lock Enabled' 1
+	xinput --set-prop $TOUCHPAD_ID 'libinput Natural Scrolling Enabled' 1
+	xinput --set-prop $TOUCHPAD_ID 'libinput Middle Emulation Enabled' 1
         slstatus &
         xcompmgr &
         copyq &
