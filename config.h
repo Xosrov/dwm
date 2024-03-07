@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ "Nautilus",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
 	{ "copyq",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
 	{ "Pavucontrol",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
+	{ "Thunar",      			NULL,     NULL,           0,         1,          0,           0,        -1,      activeopacity,   inactiveopacity },
 	{ NULL,      				NULL,     "Event Tester", 0,         0,          0,           1,        -1,      activeopacity,   inactiveopacity }, /* xev */
 };
 
